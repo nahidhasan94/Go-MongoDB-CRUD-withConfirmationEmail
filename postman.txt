@@ -1,0 +1,16 @@
+
+CREATE API : http://127.0.0.1:3000/register
+READ API :   http://127.0.0.1:3000/getUsers
+Update Api:  http://127.0.0.1:3000/update/:id
+Delete Api:  http://127.0.0.1:3000/delete/:id
+
+Request Body:
+
+{
+        	"Name":     "User2",
+		"Email":    "user2@klovercloud.com",
+		"Address":  "Dhaka",
+		"Joinate": "2022",
+		"Roles":    null
+    }
+
