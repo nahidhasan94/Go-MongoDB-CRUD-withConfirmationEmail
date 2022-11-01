@@ -17,6 +17,11 @@ func main() {
 		fmt.Println("[ERROR]: ", err.Error())
 	}
 
+	e.GET("/", index)
+
+	// Health Page
+	e.GET("/health", health)
+	
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 	e.Use(middleware.CORS())
@@ -26,6 +31,14 @@ func main() {
 	e.DELETE("/delete/:id", cont.Delete)
 	e.POST("/update/:id", cont.Update)
 
-	e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":8080"))
 
+}
+
+func index(c echo.Context) error {
+	return c.String(http.StatusOK, "This is A Go Service")
+}
+
+func health(c echo.Context) error {
+	return c.String(http.StatusOK, "I am live!")
 }
