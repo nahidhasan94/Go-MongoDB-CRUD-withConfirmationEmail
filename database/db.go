@@ -13,7 +13,7 @@ func createConnectionStringDB() string {
 	var dbUser = config.DbUser
 	var dbPass = config.DbPass
 	var clusterEndpoint = config.ClusterEndpoint
-	connectionString := "mongodb+srv://" + dbUser + ":" + dbPass + "@" + clusterEndpoint
+	connectionString := "mongodb://" + dbUser + ":" + dbPass + "@" + clusterEndpoint
 	return connectionString
 }
 
